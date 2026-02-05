@@ -3,3 +3,5 @@ pandas
 numpy
 yfinance
 scipy
+wrds
+scikit-learn
