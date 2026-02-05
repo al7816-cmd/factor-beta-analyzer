@@ -5,3 +5,4 @@ yfinance
 scipy
 wrds
 scikit-learn
+statsmodels
