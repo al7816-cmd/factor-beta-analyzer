@@ -20,7 +20,7 @@ Enter a ticker symbol and click **Run Analysis**.
 # Ticker input
 ticker_input = st.text_input(
     "Ticker symbol:",
-    value="AAPL",
+    value="TRIAL",
     max_chars=10
 )
 
