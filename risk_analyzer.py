@@ -49,7 +49,7 @@ note that 'factors.pk' spans 2025, so it is artificially setting the regression 
 """
 def load_factors():
     factors = pd.read_pickle('factors.pk')
-    print(factors)
+    factors['mkt'] = factors['mkt'] + 1
     return factors
 
 """
