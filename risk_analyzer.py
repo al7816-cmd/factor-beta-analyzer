@@ -109,4 +109,4 @@ if __name__ == "__main__":
 
     tickers = ['AAPL']
 
-    print(run_analysis(tickers, conn))
+    print(run_analysis(tickers))
