@@ -1,9 +1,7 @@
-import wrds
 import numpy as np
 import pandas as pd
 import yfinance as yf
 import os
-# import statsmodels.api as sm
 from sklearn.linear_model import LinearRegression
 
 """
@@ -24,7 +22,8 @@ logical flow:
 
 """
 returns: pandas DataFrame with two columns: dates and daily returns (adjusted)
-param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME DUE TO CONSTRAINTS FROM REGRESSION. ***
+param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME RIGHT NOW. ***
+param period: ticker returns data goes back for 'period' amount of time
 """
 def load_returns(tickers, period="2y"):
     df = yf.download(
@@ -46,17 +45,6 @@ def load_returns(tickers, period="2y"):
 """
 returns: pandas DataFrame with dates and daily returns of factor portfolios
 param starting_date: when the returns are computed starting from
-param conn: wrds Connection object --> eliminates redundancy to only use one connection object in the code
-
-def load_factors(starting_date = "2025-01-01", conn = None):
-    if conn == None:
-        conn = wrds.Connection(wrds_username="andyli26")
-
-    query = "SELECT * FROM ff.fivefactors_daily WHERE date > '2025-01-01'"
-    factors = conn.raw_sql(query)
-    factors['mkt'] = factors['mktrf'] + factors['rf']
-    factors = factors.drop(columns={'smb', 'rmw', 'cma', 'rf', 'mktrf'})
-    return factors
 """
 
 def load_factors(starting_date = "2025-01-01"):
