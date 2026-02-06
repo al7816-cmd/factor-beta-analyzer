@@ -47,7 +47,7 @@ def load_returns(tickers, period="1y"):
 returns: pandas DataFrame with dates and daily returns of factor portfolios
 param starting_date: when the returns are computed starting from
 param conn: wrds Connection object --> eliminates redundancy to only use one connection object in the code
-"""
+
 def load_factors(starting_date = "2025-01-01", conn = None):
     if conn == None:
         conn = wrds.Connection(wrds_username="andyli26")
@@ -56,6 +56,12 @@ def load_factors(starting_date = "2025-01-01", conn = None):
     factors = conn.raw_sql(query)
     factors['mkt'] = factors['mktrf'] + factors['rf']
     factors = factors.drop(columns={'smb', 'rmw', 'cma', 'rf', 'mktrf'})
+    return factors
+"""
+
+def load_factors(starting_date = "2025-01-01"):
+    factors = pd.read_pickle('factors.pk')
+    print(factors)
     return factors
 
 """
@@ -83,12 +89,10 @@ def compute_betas(df):
 returns: DataFrame with factor betas for the ticker
 param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME DUE TO CONSTRAINTS FROM REGRESSION. ***
 """
-def run_analysis(tickers, conn=None):
-    if(conn == None):
-        conn = wrds.Connection(wrds_username="andyli26")
+def run_analysis(tickers):
 
     # get factor data
-    factors = load_factors(conn=conn)
+    factors = load_factors()
 
     # get ticker data
     tick = load_returns(tickers)
@@ -103,7 +107,6 @@ def run_analysis(tickers, conn=None):
 
 if __name__ == "__main__":
 
-    conn = wrds.Connection(wrds_username="andyli26")
     tickers = ['AAPL']
 
     print(run_analysis(tickers, conn))
