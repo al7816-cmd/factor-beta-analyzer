@@ -14,7 +14,9 @@ st.markdown("""
 This tool estimates Market, Value, and Momentum factor exposures for a given stock
 using trailing daily returns and locally stored factor portfolio data.
 
-Enter a ticker symbol and click **Run Analysis**.
+Enter a ticker symbol and click **Run Analysis**. If an error occurs when you 
+click the button the first time, try it again. If it persists after that, please 
+email andy.li@stern.nyu.edu.
 """)
 
 # Ticker input
