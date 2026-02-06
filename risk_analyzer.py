@@ -26,7 +26,7 @@ logical flow:
 returns: pandas DataFrame with two columns: dates and daily returns (adjusted)
 param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME DUE TO CONSTRAINTS FROM REGRESSION. ***
 """
-def load_returns(tickers, period="1y"):
+def load_returns(tickers, period="2y"):
     df = yf.download(
         tickers,
         period=period,
