@@ -44,10 +44,10 @@ def load_returns(tickers, period="2y"):
 
 """
 returns: pandas DataFrame with dates and daily returns of factor portfolios
-param starting_date: when the returns are computed starting from
-"""
 
-def load_factors(starting_date = "2025-01-01"):
+note that 'factors.pk' spans 2025, so it is artificially setting the regression time range constraint (since merged table is inner join)
+"""
+def load_factors():
     factors = pd.read_pickle('factors.pk')
     print(factors)
     return factors
