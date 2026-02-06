@@ -63,5 +63,4 @@ if st.button("Run Analysis"):
 # Footer
 st.markdown("---")
 st.markdown("Factor data loaded locally. Price data sourced from Yahoo Finance.")
-st.markdown("The regression is based off of 2025 data, since our factor data is currently 
-constrained to end of 2025.")
+st.markdown("The regression is based off of 2025 data, since our factor data is currently constrained to end of 2025.")
