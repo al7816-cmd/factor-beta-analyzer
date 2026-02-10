@@ -12,9 +12,11 @@ st.title("Factor Beta Exposure Analyzer")
 
 st.markdown("""
 This tool estimates Market, Value, and Momentum factor exposures for stocks
-using trailing daily returns and locally stored factor portfolio data.
+using daily returns and factor portfolio data from Kenneth French's library.
 
 Enter one or more ticker symbols (comma-separated) and click **Run Analysis**.
+If it doesn't work at first, click it again. If the issue persists, email 
+andy.li@stern.nyu.edu.
 """)
 
 # Ticker input
@@ -65,4 +67,6 @@ if st.button("Run Analysis"):
 
 # Footer
 st.markdown("---")
-st.markdown("Factor data loaded locally. Price data sourced from Yahoo Finance.")
+st.markdown("""Factor data loaded locally, sourced from Kenneth French's data library:
+https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+Price data sourced from Yahoo Finance.""")
