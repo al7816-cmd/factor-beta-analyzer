@@ -69,4 +69,4 @@ if st.button("Run Analysis"):
 st.markdown("---")
 st.markdown("""Factor data loaded locally, sourced from Kenneth French's data library:
 https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
-Price data sourced from Yahoo Finance.""")
+\n Price data sourced from Yahoo Finance.""")
