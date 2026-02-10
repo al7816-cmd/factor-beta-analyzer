@@ -1,4 +1,4 @@
-import streamlit as st
+x.import streamlit as st
 from risk_analyzer import run_analysis
 
 # Page configuration
@@ -22,7 +22,7 @@ andy.li@stern.nyu.edu.
 # Ticker input
 ticker_input = st.text_input(
     "Ticker symbol(s) (comma-separated):",
-    value="AAPL",
+    value="ex. 'AAPL'",
     max_chars=100
 )
 
