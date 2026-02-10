@@ -21,8 +21,8 @@ logical flow:
 
 
 """
-returns: pandas DataFrame with two columns: dates and daily returns (adjusted)
-param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME RIGHT NOW. ***
+returns: pandas DataFrame with dates and daily returns (adjusted) for one or more tickers
+param tickers: list of strings of ticker symbols for individual securities
 param period: ticker returns data goes back for 'period' amount of time
 """
 def load_returns(tickers, period="2y"):
@@ -34,7 +34,11 @@ def load_returns(tickers, period="2y"):
     )
 
     # extract Adj Close
-    prices = df['Adj Close']
+    if len(tickers) == 1:
+        prices = df['Adj Close'].to_frame()
+        prices.columns = tickers
+    else:
+        prices = df['Adj Close']
 
     # compute returns (vectorized)
     returns = prices.pct_change()
@@ -53,29 +57,34 @@ def load_factors():
     return factors
 
 """
-returns: DataFrame with factor betas for the ticker
-param df: DataFrame containing aligned factor returns and ticker returns data. first column should be the ticker
+returns: DataFrame with factor betas for the ticker(s)
+param df: DataFrame containing aligned factor returns and ticker returns data. ticker columns come before factor columns
 """
 def compute_betas(df):
-    model = LinearRegression()
-    dep_column_name = df.columns[0]
-    y = df[dep_column_name]
-
-    X = df[['mkt', 'hml', 'umd']]
-    model.fit(X, y)
-    perf = pd.DataFrame([{
-        'ticker': dep_column_name,
-        'alpha': model.intercept_,
-        'beta_market': model.coef_[0],
-        'beta_value': model.coef_[1],
-        'beta_momentum': model.coef_[2],
-        'R^2': model.score(X, y)
-    }])
-    return perf
+    factor_cols = ['mkt', 'hml', 'umd']
+    ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
+    
+    results = []
+    X = df[factor_cols]
+    
+    for ticker in ticker_cols:
+        model = LinearRegression()
+        y = df[ticker]
+        model.fit(X, y)
+        results.append({
+            'ticker': ticker,
+            'alpha': model.intercept_,
+            'beta_market': model.coef_[0],
+            'beta_value': model.coef_[1],
+            'beta_momentum': model.coef_[2],
+            'R^2': model.score(X, y)
+        })
+    
+    return pd.DataFrame(results)
 
 """
-returns: DataFrame with factor betas for the ticker
-param ticker: list of strings of ticker symbols for individual securities --> *** PRELIMINARY VERSION. ONLY HANDLING ONE TICKER AT A TIME DUE TO CONSTRAINTS FROM REGRESSION. ***
+returns: DataFrame with factor betas for one or more tickers
+param tickers: list of strings of ticker symbols for individual securities
 """
 def run_analysis(tickers):
 
@@ -95,6 +104,6 @@ def run_analysis(tickers):
 
 if __name__ == "__main__":
 
-    tickers = ['AAPL']
+    tickers = ['AAPL','TSLA']
 
     print(run_analysis(tickers))
