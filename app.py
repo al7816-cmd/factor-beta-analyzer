@@ -11,35 +11,36 @@ st.set_page_config(
 st.title("Factor Beta Exposure Analyzer")
 
 st.markdown("""
-This tool estimates Market, Value, and Momentum factor exposures for a given stock
+This tool estimates Market, Value, and Momentum factor exposures for stocks
 using trailing daily returns and locally stored factor portfolio data.
 
-Enter a ticker symbol and click **Run Analysis**. If an error occurs when you 
-click the button the first time, try it again. If it persists after that, please 
-email andy.li@stern.nyu.edu.
+Enter one or more ticker symbols (comma-separated) and click **Run Analysis**.
 """)
 
 # Ticker input
 ticker_input = st.text_input(
-    "Ticker symbol:",
-    value="ex. 'AAPL'",
-    max_chars=10
+    "Ticker symbol(s) (comma-separated):",
+    value="AAPL",
+    max_chars=100
 )
 
 # Run analysis button
 if st.button("Run Analysis"):
 
-    ticker = ticker_input.strip().upper()
+    ticker_input_clean = ticker_input.strip().upper()
 
-    if ticker == "":
+    if ticker_input_clean == "":
         st.warning("Please enter a valid ticker.")
     else:
 
-        with st.spinner(f"Running analysis for {ticker}..."):
+        # Parse comma-separated tickers
+        tickers = [t.strip() for t in ticker_input_clean.split(',') if t.strip()]
+
+        with st.spinner(f"Running analysis for {', '.join(tickers)}..."):
 
             try:
                 # Run your analysis function
-                result = run_analysis([ticker])
+                result = run_analysis(tickers)
 
                 # Display success message
                 st.success("Analysis complete.")
@@ -65,4 +66,3 @@ if st.button("Run Analysis"):
 # Footer
 st.markdown("---")
 st.markdown("Factor data loaded locally. Price data sourced from Yahoo Finance.")
-st.markdown("The regression is based on Adj. Close Price data from Jan 1 - Dec 31, 2025.")
