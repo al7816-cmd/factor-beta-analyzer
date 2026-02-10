@@ -22,7 +22,7 @@ andy.li@stern.nyu.edu.
 # Ticker input
 ticker_input = st.text_input(
     "Ticker symbol(s) (comma-separated):",
-    value="ex. 'AAPL'",
+    value="ex. 'AAPL, TSLA'",
     max_chars=100
 )
 
