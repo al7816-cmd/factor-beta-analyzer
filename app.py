@@ -1,4 +1,4 @@
-x.import streamlit as st
+import streamlit as st
 from risk_analyzer import run_analysis
 
 # Page configuration
