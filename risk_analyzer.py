@@ -34,11 +34,10 @@ def load_returns(tickers, period="2y"):
     )
 
     # extract Adj Close
+    prices = df['Adj Close']
     if len(tickers) == 1:
-        prices = df['Adj Close'].to_frame()
+        prices = pd.DataFrame(prices)
         prices.columns = tickers
-    else:
-        prices = df['Adj Close']
 
     # compute returns (vectorized)
     returns = prices.pct_change()
