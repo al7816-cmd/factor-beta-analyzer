@@ -51,8 +51,7 @@ returns: pandas DataFrame with dates and daily returns of factor portfolios
 note that 'factors.pk' spans 2025, so it is artificially setting the regression time range constraint (since merged table is inner join)
 """
 def load_factors():
-    factors = pd.read_pickle('factors.pk')
-    factors['mkt'] = factors['mkt']
+    factors = pd.read_pickle('factors_v2.pk')
     return factors
 
 """
@@ -60,7 +59,7 @@ returns: DataFrame with factor betas for the ticker(s)
 param df: DataFrame containing aligned factor returns and ticker returns data. ticker columns come before factor columns
 """
 def compute_betas(df):
-    factor_cols = ['mkt', 'hml', 'umd']
+    factor_cols = ['mkt', 'hml', 'umd', 'VUG']
     ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
     
     results = []
@@ -76,6 +75,7 @@ def compute_betas(df):
             'beta_market': model.coef_[0],
             'beta_value': model.coef_[1],
             'beta_momentum': model.coef_[2],
+            'beta_growth': model.coef_[3],
             'R^2': model.score(X, y)
         })
     
