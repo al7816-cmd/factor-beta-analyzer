@@ -69,4 +69,6 @@ if st.button("Run Analysis"):
 st.markdown("---")
 st.markdown("""Factor data loaded locally, sourced from Kenneth French's data library:
 https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
-\n Price data sourced from Yahoo Finance.""")
+\n Price data sourced from Yahoo Finance. Growth factor currently based on returns of 
+VUG, Vanguard Growth ETF--doesn't seem to be market neutral, so we will implement our
+own and use that version here instead.""")
