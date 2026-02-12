@@ -59,7 +59,7 @@ returns: DataFrame with factor betas for the ticker(s)
 param df: DataFrame containing aligned factor returns and ticker returns data. ticker columns come before factor columns
 """
 def compute_betas(df):
-    factor_cols = ['mkt', 'hml', 'umd', 'VUG']
+    factor_cols = ['mktrf', 'hml', 'umd', 'VUG']
     ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
     
     results = []
