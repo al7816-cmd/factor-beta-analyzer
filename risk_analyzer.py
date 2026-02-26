@@ -64,7 +64,7 @@ def compute_betas(df):
 
     # if not including growth:
     factor_cols = ['mktrf', 'hml','umd']
-    df.drop(columns='VUG')
+    df = df.drop(columns='VUG')
     
     ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
     
