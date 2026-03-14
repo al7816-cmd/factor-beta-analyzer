@@ -25,7 +25,7 @@ returns: pandas DataFrame with dates and daily returns (adjusted) for one or mor
 param tickers: list of strings of ticker symbols for individual securities
 param period: ticker returns data goes back for 'period' amount of time
 """
-def load_returns(tickers, period="2y"):
+def load_returns(tickers, period="1y"):
     df = yf.download(
         tickers,
         period=period,
@@ -51,7 +51,7 @@ returns: pandas DataFrame with dates and daily returns of factor portfolios
 note that 'factors.pk' spans 2025, so it is artificially setting the regression time range constraint (since merged table is inner join)
 """
 def load_factors():
-    factors = pd.read_pickle('factors_v2.pk')
+    factors = pd.read_pickle('data.pk')
     return factors
 
 """
@@ -63,8 +63,11 @@ def compute_betas(df):
     # factor_cols = ['mktrf', 'hml', 'umd', 'VUG']
 
     # if not including growth:
-    factor_cols = ['mktrf', 'hml','umd']
-    df = df.drop(columns='VUG')
+    # factor_cols = ['mktrf', 'hml','umd']
+    # df = df.drop(columns='VUG')
+
+    # using data.pk -- reconstructed FF factors
+    factor_cols = ['momentum','growth','value','mkt']
     
     ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
     
@@ -78,10 +81,10 @@ def compute_betas(df):
         results.append({
             'ticker': ticker,
             'alpha': model.intercept_,
-            'beta_market': model.coef_[0],
-            'beta_value': model.coef_[1],
-            'beta_momentum': model.coef_[2],
-            # 'beta_growth': model.coef_[3],
+            'beta_momentum': model.coef_[0],
+            'beta_growth': model.coef_[1],
+            'beta_value': model.coef_[2],
+            'beta_market': model.coef_[3],
             'R^2': model.score(X, y)
         })
     
