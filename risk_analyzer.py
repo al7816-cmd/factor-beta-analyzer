@@ -69,7 +69,7 @@ def compute_betas(df):
     # using data.pk -- reconstructed FF factors
     factor_cols = ['momentum','growth','value','mkt']
     
-    ticker_cols = [col for col in df.columns if col not in factor_cols + ['date']]
+    ticker_cols = [col for col in df.columns if col not in factor_cols + ['datadate']]
     
     results = []
     X = df[factor_cols]
@@ -103,8 +103,8 @@ def run_analysis(tickers):
     tick = load_returns(tickers)
 
     # merge data into one table
-    df = tick.merge(factors, left_index=True, right_on='date', how='inner')
-    df.index = df['date']
+    df = tick.merge(factors, left_index=True, right_on='datadate', how='inner')
+    df.index = df['datadate']
 
     # regression
     return compute_betas(df)
