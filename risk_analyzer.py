@@ -98,7 +98,7 @@ def run_analysis(tickers):
 
     # get factor data
     factors = load_factors()
-    factors.index = factors.index.dt.strftime('%Y-%m-%d')
+    factors.index = factors.index.strftime('%Y-%m-%d')
 
     # get ticker data
     tick = load_returns(tickers)
