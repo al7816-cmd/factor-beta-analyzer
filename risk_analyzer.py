@@ -104,7 +104,7 @@ def run_analysis(tickers):
     tick = load_returns(tickers)
 
     # merge data into one table
-    df = tick.merge(factors, left_index=True, right_on='datadate', how='inner')
+    df = tick.merge(factors, left_index=True, right_index=True, how='inner')
     df.index = df['datadate']
 
     # regression
