@@ -105,7 +105,7 @@ def run_analysis(tickers):
 
     # merge data into one table
     df = tick.merge(factors, left_index=True, right_index=True, how='inner')
-    df.index = df['datadate']
+    # df.index = df['datadate']
 
     # regression
     return compute_betas(df)
