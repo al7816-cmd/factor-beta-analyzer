@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import wrds
 import datetime
+import os
 
 ####################################################################
 # CONSTANTS & DATA LOADING FUNCTIONS
@@ -386,9 +387,12 @@ def save_factors():
     factors = factors.merge(value, how='inner', left_on='datadate', right_on='datadate')
     factors = factors.merge(returns_mkt, how='inner', left_on='datadate', right_index=True)
 
-    factors.to_pickle('data.pk')
+    factors.to_pickle('data/data.pk')
     factors.to_csv('data.csv')
 
 if __name__ == '__main__':
     save_factors()
+
+    
+    
     CONN.close()
