@@ -388,7 +388,7 @@ def save_factors():
     factors = factors.merge(returns_mkt, how='inner', left_on='datadate', right_index=True)
 
     factors.to_pickle('data/data.pk')
-    factors.to_csv('data.csv')
+    factors.to_csv('data/data.csv')
 
 if __name__ == '__main__':
     save_factors()
