@@ -393,6 +393,9 @@ def save_factors():
 if __name__ == '__main__':
     save_factors()
 
-    
+    os.system("git add data/data.pk")
+    os.system("git add data/data.csv")
+    os.system('git commit -m "auto update data"')
+    os.system("git push")
     
     CONN.close()
