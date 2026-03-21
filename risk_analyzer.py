@@ -51,7 +51,7 @@ returns: pandas DataFrame with dates and daily returns of factor portfolios
 note that 'factors.pk' spans 2025, so it is artificially setting the regression time range constraint (since merged table is inner join)
 """
 def load_factors():
-    factors = pd.read_pickle('data.pk')
+    factors = pd.read_pickle('data/data.pk')
     return factors
 
 """
