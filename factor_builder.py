@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import data_loader
 import wrds
 import datetime
 
