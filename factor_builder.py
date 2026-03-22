@@ -353,13 +353,9 @@ def build_value_factor(
         (ranking_q >= n - q + 1).astype(float) / q
         - (ranking_q <= q).astype(float) / q
     )
-
-    print(f"weights_q: {weights_q}")
     
     # shift to account for data availability lag
     weights_q = weights_q.shift(2)
-
-    print(f"weights_q shifted: {weights_q}")
     
     # Expand to daily weights
     weights_daily = weights_q.reindex(ret_daily.index, method='ffill').fillna(0.0)
