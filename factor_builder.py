@@ -8,7 +8,7 @@ import os
 # CONSTANTS & DATA LOADING FUNCTIONS
 
 # for cron log purposes:
-print("%%% FACTOR_BUILDER SCRIPT STARTED %%%")
+print(f"%%% {datetime.datetime.now()} : FACTOR_BUILDER SCRIPT STARTED %%%")
 
 now = datetime.datetime.now()
 DEFAULT_STARTING_DATE = (now - datetime.timedelta(days=3*366)).strftime('%Y-%m-%d')
