@@ -394,6 +394,7 @@ if __name__ == '__main__':
 
     os.system("git add data/data.pk")
     os.system("git add data/data.csv")
+    os.system("git add cron.log")
     os.system('git commit -m "auto update data"')
     os.system("git push")
     
