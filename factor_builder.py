@@ -373,9 +373,9 @@ def build_value_factor(
     return factor_ret_daily, weights_daily, ret_daily
 
 def save_factors():
-    momentum = build_momentum_factor(PRICES)[0].to_frame('momentum')
-    growth = build_eps_growth_factor(prices=PRICES, fund_raw=RAW_DATA)[0].to_frame('growth')
-    value = build_value_factor(prices=PRICES, fund_raw=RAW_DATA)[0].to_frame('value')
+    momentum = build_momentum_factor(prices=PRICES, eval_window_months=12)[0].to_frame('momentum')
+    growth = build_eps_growth_factor(prices=PRICES, fund_raw=RAW_DATA, eval_window_months=12)[0].to_frame('growth')
+    value = build_value_factor(prices=PRICES, fund_raw=RAW_DATA, eval_window_months=12)[0].to_frame('value')
     prices_mkt, returns_mkt, volumes_mkt = load_returns(sp500=False, starting_date='2023-06-01', tickers=['SPY','IVE'], db=CONN)
 
     returns_mkt = returns_mkt.rename(columns={'108132':'mkt'})
