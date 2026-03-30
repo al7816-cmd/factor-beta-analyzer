@@ -1006,3 +1006,143 @@ Everything up-to-date
 %%% 2026-03-23 00:47:01.947471 : FACTOR_BUILDER SCRIPT STARTED %%%
 Loading library list...
 Done
+%%% 2026-03-23 11:25:02.149658 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:26:01.716561 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:27:01.999785 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:30:02.308616 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:28:01.882503 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:29:02.039855 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:31:01.442503 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-23 11:32:02.179951 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-24 09:30:22.253953 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-03-26 09:30:05.322845 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
