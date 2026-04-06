@@ -1146,3 +1146,76 @@ Enter your WRDS username [andyli26]:Traceback (most recent call last):
     username = input("Enter your WRDS username [{}]:".format(uname))
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 EOFError: EOF when reading a line
+[main 437a78d] auto update data
+ 3 files changed, 267 insertions(+)
+To github.com:al7816-cmd/factor-beta-analyzer.git
+   0276ab5..437a78d  main -> main
+%%% 2026-03-30 09:30:02.950772 : FACTOR_BUILDER SCRIPT STARTED %%%
+Loading library list...
+Done
+%%% 2026-04-02 09:34:40.005888 : FACTOR_BUILDER SCRIPT STARTED %%%
+Enter your WRDS username [andyli26]:Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 17, in <module>
+    CONN = wrds.Connection(wrds_username = 'andyli26')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 76, in __init__
+    self.connect()
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 115, in connect
+    self._username, self._password = self.__get_user_credentials()
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 216, in __get_user_credentials
+    username = input("Enter your WRDS username [{}]:".format(uname))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line
+%%% 2026-04-05 09:30:42.295087 : FACTOR_BUILDER SCRIPT STARTED %%%
+Loading library list...
+Done
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.OperationalError: could not receive data from server: Operation timed out
+SSL SYSCALL error: Operation timed out
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 118, in <module>
+    PRICES, RETURNS, VOLUMES = load_returns(sp500=False, starting_date=DEFAULT_STARTING_DATE, tickers = SP500['tic'].tolist(), db=CONN)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/andyli/factor-beta-analyzer/factor_builder.py", line 42, in load_returns
+    df = db.raw_sql(query)
+         ^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/wrds/sql.py", line 588, in raw_sql
+    df = pd.read_sql_query(
+         ^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 526, in read_sql_query
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/pandas/io/sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1779, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/opt/anaconda3/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not receive data from server: Operation timed out
+SSL SYSCALL error: Operation timed out
+
+[SQL: select gvkey, iid, tic, prccd, cshtrd, datadate from comp.secd where datadate > '2023-04-03' and gvkey in ('001075', '001078', '001161', '001209', '001300', '001327', '001440', '001447', '001449', '001487', '001598', '001602', '001632', '001678', '001690', '001704', '001722', '001878', '001891', '001913', '001988', '002019', '002086', '002111', '002136', '002176', '002184', '002285', '002403', '002435', '002547', '002574', '002663', '002710', '002751', '002817', '002968', '002991', '003026', '003062', '003121', '003144', '003170', '003221', '003226', '003243', '003362', '003413', '003439', '003504', '003505', '003532', '003650', '003735', '003813', '003835', '003851', '003897', '003980', '004016', '004029', '004058', '004060', '004066', '004093', '004145', '004199', '004213', '004321', '004383', '004423', '004430', '004494', '004503', '004517', '004598', '004605', '004640', '004674', '004699', '004723', '004839', '004885', '004973', '005046', '005047', '005071', '005073', '005125', '005256', '005439', '005492', '005518', '005543', '005568', '005597', '005606', '005643', '005680', '005709', '005742', '005764', '005783', '005786', '005878', '005959', '006008', '006066', '006078', '006104', '006216', '006223', '006266', '006268', '006304', '006310', '006338', '006435', '006502', '006565', '006669', '006730', '006774', '006781', '006829', '007063', '007065', '007085', '007146', '007154', '007163', '007171', '007228', '007241', '007257', '007343', '007366', '007435', '007585', '007637', '007647', '007881', '007905', '007906', '007921', '007923', '007970', '007974', '007977', '007982', '007985', '008007', '008030', '008068', '008099', '008151', '008245', '008247', '008253', '008264', '008272', '008358', '008402', '008455', '008463', '008479', '008530', '008539', '008543', '008549', '008762', '008810', '008823', '008898', '009203', '009225', '009248', '009465', '009667', '009771', '009777', '009778', '009783', '009846', '009850', '009882', '009899', '010016', '010035', '010096', '010115', '010247', '010453', '010499', '010504', '010519', '010530', '010614', '010789', '010793', '010795', '010860', '010867', '010894', '010903', '010920', '010983', '011032', '011228', '011259', '011376', '011399', '011456', '011506', '011511', '011550', '011554', '011672', '011811', '011856', '012124', '012138', '012141', '012142', '012441', '012459', '012540', '012635', '013125', '013341', '013421', '013498', '013714', '013721', '013824', '013988', '014225', '014282', '014418', '014477', '014489', '014561', '014590', '014822', '014824', '014934', '014960', '015044', '015247', '015267', '015414', '015417', '015444', '015855', '016101', '016134', '016478', '016721', '017874', '017928', '018043', '018699', '020232', '020412', '020548', '020686', '020748', '020779', '020904', '021825', '022815', '023071', '023249', '023809', '023812', '024197', '024216', '024316', '024344', '024405', '024468', '024616', '024617', '024731', '024800', '024856', '024925', '024975', '025124', '025279', '025313', '025340', '025434', '026156', '026367', '026590', '027786', '027885', '027914', '027928', '027965', '028034', '028180', '028191', '028192', '028195', '028320', '028349', '028629', '028733', '028877', '028930', '029015', '029028', '029099', '029127', '029389', '029649', '029733', '029736', '029751', '029875', '029901', '029984', '030004', '030098', '030293', '030822', '030990', '030999', '031587', '031592', '031673', '031846', '031887', '032106', '032580', '034084', '034410', '034443', '034636', '034749', '035077', '035168', '035182', '035620', '036175', '036190', '036191', '036877', '036910', '037420', '037460', '038212', '039136', '039293', '040614', '041818', '041897', '043197', '045167', '045169', '051008', '060979', '061302', '061380', '061388', '061420', '061483', '061494', '061567', '061574', '061591', '061739', '062374', '062689', '063172', '064030', '064166', '064356', '064630', '064768', '064821', '064891', '064925', '064997', '065417', '065609', '065772', '066065', '066362', '066368', '066431', '066446', '066528', '074813', '104432', '105365', '110179', '111864', '112111', '112168', '113490', '114524', '114628', '117768', '118122', '119314', '121077', '121382', '122380', '124434', '125240', '125595', '126136', '126296', '126554', '126721', '128978', '133366', '133768', '134932', '135990', '136725', '137131', '138743', '139665', '140541', '141384', '141459', '141913', '142953', '143356', '143357', '143912', '144009', '144435', '144559', '145046', '145552', '145701', '147579', '148349', '149070', '149318', '149337', '150937', '157057', '157855', '160225', '160329', '160479', '160888', '160991', '161844', '162129', '162887', '163036', '163610', '163946', '164122', '164296', '164708', '165123', '165746', '165914', '165993', '170617', '170750', '170841', '171007', '171067', '175404', '176567', '176701', '176928', '177088', '177227', '178015', '178507', '178704', '179202', '179437', '179534', '179621', '179741', '180652', '180711', '183377', '183536', '183736', '184254', '184500', '184700', '184725', '184996', '185400', '185532', '186310', '186989', '187697', '189491', '196955', '260774', '266156', '283184', '294524', '316056') and iid = '01']
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
